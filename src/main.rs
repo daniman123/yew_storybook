@@ -1,12 +1,14 @@
-#![allow(unused)]
+// #![allow(unused)]
 
-mod error;
-mod prelude;
-mod utils;
-mod init;
+use cli::command_handler::parse_arguments;
+
 mod cli;
 mod core;
+mod error;
+mod init;
+mod prelude;
+mod utils;
 
 fn main() {
-    println!("Hello, world!");
+    parse_arguments();
 }
