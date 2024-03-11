@@ -10,5 +10,5 @@ mod prelude;
 mod utils;
 
 fn main() {
-    parse_arguments();
+    let init_flag = parse_arguments();
 }
