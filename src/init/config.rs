@@ -49,3 +49,16 @@ fn create_yew_storybook_directory() -> Result<()> {
         e
     })?)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // Test case for the ProjectPaths::new function
+    #[test]
+    fn test_new_project_paths() {
+        let project_paths = ProjectPaths::new();
+        assert_eq!(project_paths.test_components_path, "src/components");
+        assert_eq!(project_paths.config_path_exists, false);
+    }
+}

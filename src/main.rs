@@ -11,4 +11,7 @@ mod utils;
 
 fn main() {
     let init_flag = parse_arguments();
+    if init_flag {
+        
+    }
 }
