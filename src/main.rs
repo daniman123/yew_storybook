@@ -1,3 +1,5 @@
+use core::app::App;
+
 // #![allow(unused)]
 use crate::init::config::AppConfig;
 use cli::command_handler::parse_arguments;
@@ -12,6 +14,8 @@ mod prelude;
 mod utils;
 
 fn main() {
+    yew::Renderer::<App>::new().render();
+
     let init_flag = parse_arguments();
     if init_flag {
         let project_paths = ProjectPaths::initialize_project().unwrap();
@@ -30,6 +34,6 @@ fn main() {
         let file_path = project_paths.config_path;
 
         app_conf.to_file(file_path.clone()).unwrap();
-        let config_path_value = app_conf.read_file(file_path.clone()).unwrap();
+        let _config_path_value = app_conf.read_file(file_path.clone()).unwrap();
     }
 }
